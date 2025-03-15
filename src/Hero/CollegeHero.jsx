@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const CollegeHero = () => {
+  const navigate = useNavigate();
   const [isLoaded, setIsLoaded] = useState(false);
   
   useEffect(() => {
@@ -52,7 +54,7 @@ const CollegeHero = () => {
           animate={isLoaded ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         >
-          <span className="text-blue-400">Excellence</span> in Education
+          <span className="text-blue-500">National Service Scheme</span>
         </motion.h1>
         
         <motion.div
@@ -68,8 +70,7 @@ const CollegeHero = () => {
           animate={isLoaded ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
         >
-          Empowering students to achieve their potential through innovative learning, 
-          cutting-edge research, and a supportive community since 1965.
+           "Not Me, But You" – Committed to social service, community engagement, and nation-building through dedicated volunteerism.
         </motion.p>
         
         <motion.div
@@ -78,7 +79,9 @@ const CollegeHero = () => {
           animate={isLoaded ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
         >
-          <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md transition-colors duration-300 shadow-lg">
+          <button onClick={()=>{navigate("/teams");
+            localStorage.setItem("activePage", "teams")
+          }} className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md transition-colors duration-300 shadow-lg">
             Explore Programs
           </button>
           <button className="px-6 py-3 bg-transparent border-2 border-white text-white hover:bg-white/10 font-medium rounded-md transition-colors duration-300">
