@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [activePage, setActivePage] = useState(() => {
     return localStorage.getItem("activePage") || "home";
   });
@@ -18,6 +20,11 @@ const Navbar = () => {
   }, [activePage]);
 
   const handleNavClick = (pageId) => {
+    if(pageId=="home")
+      navigate("/");
+    else
+      navigate("/"+pageId);
+
     setActivePage(pageId);
   };
 
