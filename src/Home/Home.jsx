@@ -1,10 +1,12 @@
 import React from "react";
+import Navbar from "../Navbar/Navbar";
+import CollegeHero from "../Hero/CollegeHero";
 
 function Home(){
     return(
-        <div className="text-black text-5lg">
-            this is the home page
-
+        <div>
+            <Navbar/>
+            <CollegeHero/>
         </div>
     )
 }
