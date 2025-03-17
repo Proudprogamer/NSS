@@ -169,6 +169,7 @@ const Projects = () => {
         ))}
       </div>
     </div>
+    <Footer/>
     </div>
   );
 };
